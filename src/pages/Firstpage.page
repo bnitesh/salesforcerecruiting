@@ -1,0 +1,7 @@
+<apex:page standardController="Position__c" sidebar="false">
+    <apex:sectionHeader title="Details"/>
+            <apex:sectionHeader title="{!Position__c.Name}"/>
+    
+    <apex:sectionHeader title="{!Position__c.Open_Date__c}"/>
+   
+</apex:page>

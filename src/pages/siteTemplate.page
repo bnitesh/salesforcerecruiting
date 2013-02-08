@@ -1,0 +1,66 @@
+<apex:page showHeader="false" standardStylesheets="false">
+
+    <link rel="stylesheet" type="text/css" href="http://ev-qa.zs.local/JAM-Upgrade/0008-Cadmium/Web/so-styles.css?version=8569" />
+    <link rel="stylesheet" type="text/css" href="http://ev-qa.zs.local/JAM-Upgrade/IdentityManager/app/ApplicationRegistry/WebResources/styles/launchbar.css?v=4286" />
+    
+<div name="frameMenu" id="frameMenu">
+       
+    <div id="launch-bar">
+        <div id="2_LaunchBar">
+            <div id="lbr">
+                <div id="lbar-logout">
+                    <a class="lbar-link" href="/secur/logout.jsp" id="lbl_so">Sign Out</a>';
+                </div>
+                <div id="lbar-user" class="lbar-menu-off">
+                    <a id="" class="" href="javascript:void(0);"><span class="user-label">User: </span><span class="user-name">{!$User.LastName}, {!$User.FirstName}</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+    <div id="mnuMain"><div id="header"></div>
+      <div id="motifCurve" style="">
+    <apex:tabpanel >
+      <apex:tab label="Tab1"></apex:tab>
+      <apex:tab label="tab2"></apex:tab>
+    </apex:tabpanel>
+  </div>
+  
+      <apex:toolbar id="theToolbar" rendered="true">
+
+        <apex:outputText value="Sample Toolbar"/>
+
+        <apex:toolbarGroup itemSeparator="line" id="toobarGroupLinks">
+
+            <apex:outputLink value="http://www.salesforce.com">
+
+              salesforce
+
+            </apex:outputLink>
+
+            <apex:outputLink value="http://developer.salesforce.com">
+
+             apex developer network
+
+            </apex:outputLink>
+
+        </apex:toolbarGroup>
+
+        <apex:toolbarGroup itemSeparator="line" location="right" id="toobarGroupForm">
+
+            <apex:form id="theForm">
+
+                <apex:inputText id="theInputText">Enter Text</apex:inputText>
+
+                <apex:commandLink value="search" id="theCommandLink"/>
+
+            </apex:form>
+
+        </apex:toolbarGroup>
+
+    </apex:toolbar>
+    </div>
+
+</div>
+<apex:insert name="body"></apex:insert>
+</apex:page>

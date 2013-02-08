@@ -1,0 +1,7 @@
+<apex:page sidebar="true" showHeader="true">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Hello World {!$User.FirstName} {!$User.LastName}</h1><br/><br/>
+  Welcome to Salesforce!<br/><br/>
+  Today is {!Now()}
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

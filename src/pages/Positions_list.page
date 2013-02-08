@@ -1,0 +1,29 @@
+<apex:page controller="PositionsController" showHeader="false" standardStylesheets="true">
+    <apex:composition template="JavelinTemplate" >
+    <apex:define name="body">
+    
+    <apex:form >
+        <apex:sectionHeader title="Positions" />
+        <apex:pageBlock title="" id="pageBlock">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="New" action="{!URLFOR($Action.Position__c.New)}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!positions}" var="pos"
+                rendered="{!NOT(ISNULL(positions))}">
+                <apex:column value="{!pos.Name}" />
+                <apex:column value="{!pos.Min_Pay__c}" />
+                <apex:column value="{!pos.Max_Pay__c}" />
+                <apex:column value="{!pos.Open_Date__c}" />
+                <apex:column >
+                    <apex:facet name="header">Status</apex:facet>
+                    <div style="background-color:{!IF(pos.End_Date__c > TODAY(),'#7CFC00', '#FFA07A')}">
+                        {!IF(pos.End_Date__c  > TODAY(),'Open', 'Closed')} 
+                    </div> 
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    
+    </apex:define>
+    </apex:composition>
+</apex:page>
